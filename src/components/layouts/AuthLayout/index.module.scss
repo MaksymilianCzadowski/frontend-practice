@@ -1,0 +1,16 @@
+.wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    .left__part {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .right_part {
+        width: 50%;
+        height: 100%;
+    }
+}
