@@ -6,6 +6,7 @@ import styles from "./index.module.scss";
 import Loader from "@/components/UI/Loader";
 import Cookies from "js-cookie";
 import useFetch from "@/hooks/useFetch";
+import Alert from "@/components/UI/Alert";
 
 const Index = () => {
   const router = useRouter();
@@ -32,10 +33,10 @@ const Index = () => {
 
   useEffect(() => {
     if (data.auth) {
-      Cookies.set("token", data.token)
-      router.push("/")
+      Cookies.set("token", data.token);
+      router.push("/");
     }
-  }, [data, error, router])
+  }, [data, error, router]);
 
   return (
     <div className={styles.wrapper}>
@@ -53,6 +54,7 @@ const Index = () => {
           placeHolder="Enter your email address"
           required={true}
           className={styles.input}
+          disabled={isLoading}
         />
         <Input
           label={"Password"}
@@ -63,10 +65,16 @@ const Index = () => {
           required={true}
           onChange={(e) => handleChange(e)}
           placeHolder="Enter password"
+          disabled={isLoading}
         />
-        {error ? <p className={styles.error}>{error}</p> : null }
+        {error && <Alert message="Credential invalid" />}
         <div>
-          <Button className={styles.button} type="submit" title="Login" />
+          <Button
+            className={styles.button}
+            type="submit"
+            title="Login"
+            disabled={isLoading}
+          />
         </div>
       </form>
     </div>
