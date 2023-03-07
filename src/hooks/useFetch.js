@@ -25,7 +25,9 @@ const useFetch = (url, body, method) => {
     } catch (error) {
       setError(error.message);
     } finally {
-      setIsLoading(false);
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 1000);
     }
   };
 
