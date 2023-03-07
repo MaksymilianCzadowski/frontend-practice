@@ -1,8 +1,75 @@
 .button {
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-top: 20px;
-    padding: 1vh 1vh;
-    background-color: #fff;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 20px;
+  padding: 1vh 1vh;
+  background-color: #fff;
+  &:hover {
+    cursor: pointer;
+  }
+}
+.input {
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  height: 50px;
+  margin: 10px;
+  padding: 0 1vw;
+}
+.header__container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.form__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+.close__button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 20px;
+  // padding: 10px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  &:hover {
+    cursor: pointer;
+  }
+}
+.button__container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 20px;
+}
+.button__save {
+  color: green;
+  border: 1px solid green;
+  padding: 10px 20px;
+  border-radius: 5px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+.button__cancel {
+  color: red;
+  border: 1px solid red;
+  padding: 10px 20px;
+  border-radius: 5px;
+  &:hover {
+    cursor: pointer;
+  }
 }
