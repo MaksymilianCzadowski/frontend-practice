@@ -1,3 +1,4 @@
+import Cookies from "js-cookie";
 import { useState, useEffect } from "react";
 
 const useFetch = (url, body, method) => {
@@ -13,6 +14,7 @@ const useFetch = (url, body, method) => {
         body: body ? JSON.stringify(body) : null,
         headers: {
           "Content-Type": "application/json",
+          "authorization": Cookies.get("token"),
         },
       });
       const data = await response.json();

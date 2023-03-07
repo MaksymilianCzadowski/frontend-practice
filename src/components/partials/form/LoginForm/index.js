@@ -34,7 +34,7 @@ const Index = () => {
   useEffect(() => {
     if (data.auth) {
       Cookies.set("token", data.token);
-      router.push("/");
+      router.push("/account/profil");
     }
   }, [data, error, router]);
 
